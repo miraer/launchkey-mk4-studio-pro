@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+tools/font/
+tools/js_previews.png
+dist/
+*.zip

@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- ******************************************************************************************** -->
+<!-- Novation Launchkey MK4 (25/37/49/61) - DAW control surface for Fender Studio Pro -->
+<!-- Custom integration. DAW port: buttons and pads on channel 1, encoders and faders on -->
+<!-- channel 16, Shift and mode reports on channel 7. -->
+<!-- ******************************************************************************************** -->
+
+<ControlSurface>
+
+	<!-- ******************************************************************************************** -->
+	<!-- CONTROL DEFINITIONS -->
+	<!-- ******************************************************************************************** -->
+
+	<Controls>
+
+		<!-- Buttons -->
+		<Control name="shiftButton" title="Shift" type="button" options="receive">
+			<MidiMessage status="#B0" channel="#06" address="#3F"/>
+		</Control>
+		<Control name="shiftAltButton" title="Shift" type="button" options="receive">
+			<MidiMessage status="#B0" channel="#06" address="#48"/>
+		</Control>
+		<Control name="playButton" title="Play" type="button" options="receive">
+			<MidiMessage status="#B0" address="#73"/>
+		</Control>
+		<Control name="stopButton" title="Stop" type="button" options="receive">
+			<MidiMessage status="#B0" address="#74"/>
+		</Control>
+		<Control name="recordButton" title="Record" type="button" options="receive">
+			<MidiMessage status="#B0" address="#75"/>
+		</Control>
+		<Control name="loopButton" title="Loop" type="button" options="receive">
+			<MidiMessage status="#B0" address="#76"/>
+		</Control>
+		<Control name="captureButton" title="Capture MIDI" type="button" options="receive">
+			<MidiMessage status="#B0" address="#4A"/>
+		</Control>
+		<Control name="quantizeButton" title="Quantise" type="button" options="receive">
+			<MidiMessage status="#B0" address="#4B"/>
+		</Control>
+		<Control name="metronomeButton" title="Metronome" type="button" options="receive">
+			<MidiMessage status="#B0" address="#4C"/>
+		</Control>
+		<Control name="undoButton" title="Undo" type="button" options="receive">
+			<MidiMessage status="#B0" address="#4D"/>
+		</Control>
+		<Control name="trackLeftButton" title="Track Left" type="button" options="receive">
+			<MidiMessage status="#B0" address="#67"/>
+		</Control>
+		<Control name="trackRightButton" title="Track Right" type="button" options="receive">
+			<MidiMessage status="#B0" address="#66"/>
+		</Control>
+		<Control name="padUpButton" title="Pads Up" type="button" options="receive">
+			<MidiMessage status="#B0" address="#6A"/>
+		</Control>
+		<Control name="padDownButton" title="Pads Down" type="button" options="receive">
+			<MidiMessage status="#B0" address="#6B"/>
+		</Control>
+		<Control name="sceneLaunchButton" title="Scene Launch" type="button" options="receive">
+			<MidiMessage status="#B0" address="#68"/>
+		</Control>
+		<Control name="functionButton" title="Function" type="button" options="receive">
+			<MidiMessage status="#B0" address="#69"/>
+		</Control>
+		<Control name="paramUpButton" title="Encoder Page Up" type="button" options="receive">
+			<MidiMessage status="#B0" address="#33"/>
+		</Control>
+		<Control name="paramDownButton" title="Encoder Page Down" type="button" options="receive">
+			<MidiMessage status="#B0" address="#34"/>
+		</Control>
+		<Control name="armSelectButton" title="Arm/Select" type="button" options="receive">
+			<MidiMessage status="#B0" address="#2D"/>
+		</Control>
+
+		<!-- Fader buttons -->
+		<Control name="trackButton[0]" title="Fader Button 1" type="button" options="receive">
+			<MidiMessage status="#B0" address="#25"/>
+		</Control>
+		<Control name="trackButton[1]" title="Fader Button 2" type="button" options="receive">
+			<MidiMessage status="#B0" address="#26"/>
+		</Control>
+		<Control name="trackButton[2]" title="Fader Button 3" type="button" options="receive">
+			<MidiMessage status="#B0" address="#27"/>
+		</Control>
+		<Control name="trackButton[3]" title="Fader Button 4" type="button" options="receive">
+			<MidiMessage status="#B0" address="#28"/>
+		</Control>
+		<Control name="trackButton[4]" title="Fader Button 5" type="button" options="receive">
+			<MidiMessage status="#B0" address="#29"/>
+		</Control>
+		<Control name="trackButton[5]" title="Fader Button 6" type="button" options="receive">
+			<MidiMessage status="#B0" address="#2A"/>
+		</Control>
+		<Control name="trackButton[6]" title="Fader Button 7" type="button" options="receive">
+			<MidiMessage status="#B0" address="#2B"/>
+		</Control>
+		<Control name="trackButton[7]" title="Fader Button 8" type="button" options="receive">
+			<MidiMessage status="#B0" address="#2C"/>
+		</Control>
+
+		<!-- Encoders: absolute (Plugin, Mixer, Sends modes). nofeedback: the host only sends values changed
+		     elsewhere, echoing the encoder's own values back would make it stick. -->
+		<Control name="encoder[0]" title="Encoder 1" type="knob" options="transmit receive nofeedback public pageable">
+			<MidiMessage status="#B0" channel="#0F" address="#15"/>
+		</Control>
+		<Control name="encoder[1]" title="Encoder 2" type="knob" options="transmit receive nofeedback public pageable">
+			<MidiMessage status="#B0" channel="#0F" address="#16"/>
+		</Control>
+		<Control name="encoder[2]" title="Encoder 3" type="knob" options="transmit receive nofeedback public pageable">
+			<MidiMessage status="#B0" channel="#0F" address="#17"/>
+		</Control>
+		<Control name="encoder[3]" title="Encoder 4" type="knob" options="transmit receive nofeedback public pageable">
+			<MidiMessage status="#B0" channel="#0F" address="#18"/>
+		</Control>
+		<Control name="encoder[4]" title="Encoder 5" type="knob" options="transmit receive nofeedback public pageable">
+			<MidiMessage status="#B0" channel="#0F" address="#19"/>
+		</Control>
+		<Control name="encoder[5]" title="Encoder 6" type="knob" options="transmit receive nofeedback public pageable">
+			<MidiMessage status="#B0" channel="#0F" address="#1A"/>
+		</Control>
+		<Control name="encoder[6]" title="Encoder 7" type="knob" options="transmit receive nofeedback public pageable">
+			<MidiMessage status="#B0" channel="#0F" address="#1B"/>
+		</Control>
+		<Control name="encoder[7]" title="Encoder 8" type="knob" options="transmit receive nofeedback public pageable">
+			<MidiMessage status="#B0" channel="#0F" address="#1C"/>
+		</Control>
+
+		<!-- Faders (Launchkey 49/61): absolute, nofeedback for the same reason as the encoders -->
+		<Control name="fader[0]" title="Fader 1" type="fader" options="transmit receive nofeedback">
+			<MidiMessage status="#B0" channel="#0F" address="#05"/>
+		</Control>
+		<Control name="fader[1]" title="Fader 2" type="fader" options="transmit receive nofeedback">
+			<MidiMessage status="#B0" channel="#0F" address="#06"/>
+		</Control>
+		<Control name="fader[2]" title="Fader 3" type="fader" options="transmit receive nofeedback">
+			<MidiMessage status="#B0" channel="#0F" address="#07"/>
+		</Control>
+		<Control name="fader[3]" title="Fader 4" type="fader" options="transmit receive nofeedback">
+			<MidiMessage status="#B0" channel="#0F" address="#08"/>
+		</Control>
+		<Control name="fader[4]" title="Fader 5" type="fader" options="transmit receive nofeedback">
+			<MidiMessage status="#B0" channel="#0F" address="#09"/>
+		</Control>
+		<Control name="fader[5]" title="Fader 6" type="fader" options="transmit receive nofeedback">
+			<MidiMessage status="#B0" channel="#0F" address="#0A"/>
+		</Control>
+		<Control name="fader[6]" title="Fader 7" type="fader" options="transmit receive nofeedback">
+			<MidiMessage status="#B0" channel="#0F" address="#0B"/>
+		</Control>
+		<Control name="fader[7]" title="Fader 8" type="fader" options="transmit receive nofeedback">
+			<MidiMessage status="#B0" channel="#0F" address="#0C"/>
+		</Control>
+		<Control name="fader[8]" title="Master Fader" type="fader" options="transmit receive nofeedback">
+			<MidiMessage status="#B0" channel="#0F" address="#0D"/>
+		</Control>
+
+		<!-- Pads in DAW layout (bottom row first, as used by the pad section) -->
+		<Control name="padBottom[0]" type="trigger" options="receive"><MidiMessage status="NoteTrigger" address="#70"/></Control>
+		<Control name="padBottom[1]" type="trigger" options="receive"><MidiMessage status="NoteTrigger" address="#71"/></Control>
+		<Control name="padBottom[2]" type="trigger" options="receive"><MidiMessage status="NoteTrigger" address="#72"/></Control>
+		<Control name="padBottom[3]" type="trigger" options="receive"><MidiMessage status="NoteTrigger" address="#73"/></Control>
+		<Control name="padBottom[4]" type="trigger" options="receive"><MidiMessage status="NoteTrigger" address="#74"/></Control>
+		<Control name="padBottom[5]" type="trigger" options="receive"><MidiMessage status="NoteTrigger" address="#75"/></Control>
+		<Control name="padBottom[6]" type="trigger" options="receive"><MidiMessage status="NoteTrigger" address="#76"/></Control>
+		<Control name="padBottom[7]" type="trigger" options="receive"><MidiMessage status="NoteTrigger" address="#77"/></Control>
+		<Control name="padTop[0]" type="trigger" options="receive"><MidiMessage status="NoteTrigger" address="#60"/></Control>
+		<Control name="padTop[1]" type="trigger" options="receive"><MidiMessage status="NoteTrigger" address="#61"/></Control>
+		<Control name="padTop[2]" type="trigger" options="receive"><MidiMessage status="NoteTrigger" address="#62"/></Control>
+		<Control name="padTop[3]" type="trigger" options="receive"><MidiMessage status="NoteTrigger" address="#63"/></Control>
+		<Control name="padTop[4]" type="trigger" options="receive"><MidiMessage status="NoteTrigger" address="#64"/></Control>
+		<Control name="padTop[5]" type="trigger" options="receive"><MidiMessage status="NoteTrigger" address="#65"/></Control>
+		<Control name="padTop[6]" type="trigger" options="receive"><MidiMessage status="NoteTrigger" address="#66"/></Control>
+		<Control name="padTop[7]" type="trigger" options="receive"><MidiMessage status="NoteTrigger" address="#67"/></Control>
+
+		<!-- Driven from LaunchkeyMK4MidiDevice.js -->
+		<Control name="padModeReceiver" options="receive"/>
+		<Control name="encoderModeReceiver" options="receive"/>
+		<Control name="faderModeReceiver" options="receive"/>
+		<Control name="bankLeft" type="trigger" options="receive"/>
+		<Control name="bankRight" type="trigger" options="receive"/>
+		<foreach variable="$i" count="8">
+			<Control name="encInc[$i]" type="trigger" options="receive"/>
+			<Control name="encDec[$i]" type="trigger" options="receive"/>
+		</foreach>
+
+		<!-- LEDs and state, handled in LaunchkeyMK4MidiDevice.js -->
+		<Control name="playLED" options="transmit"/>
+		<Control name="stopLED" options="transmit"/>
+		<Control name="recordLED" options="transmit"/>
+		<Control name="loopLED" options="transmit"/>
+		<Control name="metronomeLED" options="transmit"/>
+		<Control name="padPageState" options="transmit"/>
+		<Control name="sceneViewState" options="transmit"/>
+		<Control name="faderButtonModeState" options="transmit"/>
+		<Control name="mixerPageState" options="transmit"/>
+		<Control name="sendIndexState" options="transmit"/>
+		<Control name="pageNumberState" options="transmit"/>
+		<Control name="pageCountState" options="transmit"/>
+		<Control name="bankOffsetState" options="transmit"/>
+		<Control name="bankCountState" options="transmit"/>
+		<foreach variable="$i" count="8">
+			<Control name="trackPresent[$i]" options="transmit"/>
+			<Control name="trackColor[$i]" type="rgb" options="transmit"/>
+			<Control name="trackSelected[$i]" options="transmit"/>
+			<Control name="trackArmed[$i]" options="transmit"/>
+			<Control name="trackMuted[$i]" options="transmit"/>
+			<Control name="trackSoloed[$i]" options="transmit"/>
+			<Control name="lpBottomState[$i]" options="transmit fastupdate"/>
+			<Control name="lpBottomAnimation[$i]" options="transmit fastupdate"/>
+			<Control name="lpBottomColor[$i]" type="rgb" options="transmit fastupdate"/>
+			<Control name="lpTopState[$i]" options="transmit fastupdate"/>
+			<Control name="lpTopAnimation[$i]" options="transmit fastupdate"/>
+			<Control name="lpTopColor[$i]" type="rgb" options="transmit fastupdate"/>
+		</foreach>
+
+		<!-- Screen -->
+		<foreach variable="$i" count="8">
+			<Control name="encTitle[$i]" type="textdisplay" options="transmit"/>
+			<Control name="encName[$i]" type="textdisplay" options="transmit"/>
+			<Control name="encValue[$i]" type="textdisplay" options="transmit"/>
+		</foreach>
+		<foreach variable="$i" count="9">
+			<Control name="fdrTitle[$i]" type="textdisplay" options="transmit"/>
+			<Control name="fdrValue[$i]" type="textdisplay" options="transmit"/>
+		</foreach>
+		<Control name="selectedTrackName" type="textdisplay" options="transmit"/>
+		<Control name="focusDeviceName" type="textdisplay" options="transmit"/>
+		<Control name="tempoText" type="textdisplay" options="transmit"/>
+
+	</Controls>
+
+	<!-- ******************************************************************************************** -->
+	<!-- SURFACE MAPPINGS -->
+	<!-- ******************************************************************************************** -->
+
+	<Mappings>
+
+		<!-- Layout values reported by the Launchkey -->
+		<define name="$PADMODE_DAW" value="2"/>
+		<define name="$ENCMODE_MIXER" value="1"/>
+		<define name="$ENCMODE_PLUGIN" value="2"/>
+		<define name="$ENCMODE_SENDS" value="4"/>
+		<define name="$ENCMODE_TRANSPORT" value="5"/>
+		<define name="$PADPAGE_LAUNCHER" value="0"/>
+		<define name="$PADPAGE_MIXER" value="1"/>
+
+		<!-- ******************************************************************************************** -->
+		<!-- Control Link: encoders in Plugin mode -->
+		<!-- ******************************************************************************************** -->
+
+		<GenericMapping>
+			<Bank>
+				<foreach variable="$i" count="8">
+					<Strip name="encoder[$i]">
+						<ParamVariant using="@global" param="encoderMode" strict="true">
+							<Group value="$ENCMODE_PLUGIN">
+								<Value control="encoder[$i]" param="value" options="above"/>
+								<String control="encName[$i]" param="title" options="above"/>
+								<String control="encValue[$i]" param="value"/>
+							</Group>
+						</ParamVariant>
+					</Strip>
+				</foreach>
+			</Bank>
+		</GenericMapping>
+
+		<!-- ******************************************************************************************** -->
+		<!-- Global -->
+		<!-- ******************************************************************************************** -->
+
+		<Global>
+			<Toggle control="shiftButton" param="shiftModifier" options="nonlatching"/>
+			<Toggle control="shiftAltButton" param="shiftModifier" options="nonlatching"/>
+			<PlainValue control="padModeReceiver" param="padMode"/>
+			<PlainValue control="encoderModeReceiver" param="encoderMode"/>
+			<PlainValue control="faderModeReceiver" param="faderMode"/>
+
+			<!-- Script state used for LEDs and the screen -->
+			<PlainValue control="padPageState" param="padPage"/>
+			<PlainValue control="sceneViewState" param="sceneView"/>
+			<PlainValue control="faderButtonModeState" param="faderButtonMode"/>
+			<PlainValue control="mixerPageState" param="mixerPage"/>
+			<PlainValue control="sendIndexState" param="sendIndex"/>
+			<PlainValue control="bankOffsetState" param="bankOffset"/>
+			<PlainValue control="bankCountState" param="bankCount"/>
+			<foreach variable="$i" count="8">
+				<Value control="trackPresent[$i]" param="trackPresent$i"/>
+			</foreach>
+			<Timer interval="500" onTick="onPresenceTimer"/>
+
+			<using device="Editor">
+				<String control="focusDeviceName" param="focusDeviceName"/>
+			</using>
+			<using device="Editor/Paging">
+				<PlainValue control="pageNumberState" param="pageNumber"/>
+				<PlainValue control="pageCountState" param="pageCount"/>
+			</using>
+			<using device="device:///TransportPanel">
+				<String control="tempoText" param="tempo"/>
+			</using>
+
+			<!-- Track navigation (Shift + Track buttons scroll the bank, see LaunchkeyMK4MidiDevice.js) -->
+			<Command control="trackLeftButton" command.category="Navigation" command.name="Previous Track"/>
+			<Command control="trackRightButton" command.category="Navigation" command.name="Next Track"/>
+
+			<!-- Pad area -->
+			<Invoke control="padUpButton" onReceive="onPadUp"/>
+			<Invoke control="padDownButton" onReceive="onPadDown"/>
+			<Toggle control="armSelectButton" param="faderButtonMode"/>
+			<Command control="captureButton" command.category="Track" command.name="Recall Retrospective Recording"/>
+
+			<ParamVariant param="shiftModifier">
+				<Group>
+					<Toggle control="sceneLaunchButton" param="sceneView" options="momentary" timeout="300"/>
+					<Toggle control="functionButton" param="padPage"/>
+					<Command control="quantizeButton" command.category="Event" command.name="Quantize"/>
+					<Command control="undoButton" command.category="Edit" command.name="Undo"/>
+				</Group>
+				<Group>
+					<Command control="sceneLaunchButton" command.category="Launcher" command.name="Stop All"/>
+					<Command control="functionButton" command.category="View" command.name="Launcher"/>
+					<Command control="quantizeButton" command.category="Event" command.name="Quantize 50%"/>
+					<Command control="undoButton" command.category="Edit" command.name="Redo"/>
+				</Group>
+			</ParamVariant>
+
+			<!-- Encoder page buttons and Transport encoder mode -->
+			<ParamVariant param="encoderMode" strict="true">
+				<Group value="$ENCMODE_MIXER">
+					<Radio control="paramUpButton" param="mixerPage" value="0"/>
+					<Radio control="paramDownButton" param="mixerPage" value="1"/>
+				</Group>
+				<Group value="$ENCMODE_PLUGIN">
+					<ParamVariant param="shiftModifier">
+						<Group>
+							<using device="Editor/Paging">
+								<Push control="paramUpButton" param="prevPage"/>
+								<Push control="paramDownButton" param="nextPage"/>
+							</using>
+						</Group>
+						<Group>
+							<Command control="paramUpButton" command.category="Devices" command.name="Previous Device in Rack"/>
+							<Command control="paramDownButton" command.category="Devices" command.name="Next Device in Rack"/>
+						</Group>
+					</ParamVariant>
+				</Group>
+				<Group value="$ENCMODE_SENDS">
+					<Invoke control="paramUpButton" onReceive="onSendPrevious"/>
+					<Invoke control="paramDownButton" onReceive="onSendNext"/>
+				</Group>
+				<Group value="$ENCMODE_TRANSPORT">
+					<Command control="paramUpButton" command.category="Marker" command.name="Insert"/>
+					<Command control="encInc[0]" command.category="Transport" command.name="Forward Bar"/>
+					<Command control="encDec[0]" command.category="Transport" command.name="Rewind Bar"/>
+					<Command control="encInc[1]" command.category="Zoom" command.name="Zoom In"/>
+					<Command control="encDec[1]" command.category="Zoom" command.name="Zoom Out"/>
+					<Command control="encInc[2]" command.category="Zoom" command.name="Zoom In Vertical"/>
+					<Command control="encDec[2]" command.category="Zoom" command.name="Zoom Out Vertical"/>
+					<Command control="encInc[3]" command.category="Transport" command.name="Shift Loop"/>
+					<Command control="encDec[3]" command.category="Transport" command.name="Shift Loop Backwards"/>
+					<Command control="encInc[4]" command.category="Marker" command.name="Goto Next Marker"/>
+					<Command control="encDec[4]" command.category="Marker" command.name="Goto Previous Marker"/>
+					<Command control="encInc[5]" command.category="Navigation" command.name="Next Track"/>
+					<Command control="encDec[5]" command.category="Navigation" command.name="Previous Track"/>
+					<Command control="encInc[6]" command.category="Arranger" command.name="Goto Next Section"/>
+					<Command control="encDec[6]" command.category="Arranger" command.name="Goto Previous Section"/>
+					<Command control="encInc[7]" command.category="Transport" command.name="Increment Tempo"/>
+					<Command control="encDec[7]" command.category="Transport" command.name="Decrement Tempo"/>
+				</Group>
+			</ParamVariant>
+		</Global>
+
+		<!-- ******************************************************************************************** -->
+		<!-- Transport and metronome -->
+		<!-- ******************************************************************************************** -->
+
+		<DeviceMapping device="TransportPanel">
+			<ParamVariant using="@global" param="shiftModifier">
+				<Group>
+					<Command control="playButton" command.category="Transport" command.name="Toggle Start"/>
+					<Command control="stopButton" command.category="Transport" command.name="Stop"/>
+					<Toggle control="recordButton" param="record"/>
+					<Toggle control="loopButton" param="loop"/>
+				</Group>
+				<Group>
+					<Command control="playButton" command.category="Transport" command.name="Play from Loop Start"/>
+					<Command control="stopButton" command.category="Transport" command.name="Return to Zero"/>
+					<Toggle control="recordButton" param="punch"/>
+					<Command control="loopButton" command.category="Transport" command.name="Loop Selection"/>
+				</Group>
+			</ParamVariant>
+			<Value control="playLED" param="start"/>
+			<Value control="stopLED" param="stop"/>
+			<Value control="recordLED" param="record"/>
+			<Value control="loopLED" param="loop"/>
+		</DeviceMapping>
+
+		<DeviceMapping device="Metronome">
+			<ParamVariant using="@global" param="shiftModifier">
+				<Group>
+					<Toggle control="metronomeButton" param="clickOn"/>
+				</Group>
+				<Group>
+					<Toggle control="metronomeButton" param="precount"/>
+				</Group>
+			</ParamVariant>
+			<Value control="metronomeLED" param="clickOn"/>
+		</DeviceMapping>
+
+		<!-- ******************************************************************************************** -->
+		<!-- Mixer: 8 channel bank, selected channel, main bus -->
+		<!-- ******************************************************************************************** -->
+
+		<DeviceMapping device="MixerConsole" name="MixerMapping">
+
+			<ScrollBank target="RemoteBank" pagesize="8" name="MixerBank">
+				<foreach variable="$i" count="8">
+					<Strip onConnect="onConnectChannel($i)">
+
+						<!-- Fader -->
+						<Value control="fader[$i]" param="volume"/>
+						<String control="fdrTitle[$i]" param="label"/>
+						<String control="fdrValue[$i]" param="volume"/>
+
+						<!-- Channel state for LEDs -->
+						<PlainValue control="trackColor[$i]" param="color"/>
+						<Value control="trackSelected[$i]" param="selected"/>
+						<Value control="trackArmed[$i]" param="recordArmed"/>
+						<Value control="trackMuted[$i]" param="mute"/>
+						<Value control="trackSoloed[$i]" param="solo"/>
+
+						<!-- Fader buttons: Select or Arm -->
+						<ParamVariant using="@global" param="faderButtonMode">
+							<Group>
+								<Toggle control="trackButton[$i]" param="selected"/>
+							</Group>
+							<Group>
+								<Toggle control="trackButton[$i]" param="recordArmed"/>
+							</Group>
+						</ParamVariant>
+
+						<!-- Pads, Mute/Solo page: top row Mute, bottom row Solo -->
+						<ParamVariant using="@global" param="padPage" strict="true">
+							<Group value="$PADPAGE_MIXER">
+								<Toggle control="padTop[$i]" param="mute"/>
+								<Toggle control="padBottom[$i]" param="solo"/>
+							</Group>
+						</ParamVariant>
+
+						<!-- Encoders: Mixer mode (Volume/Pan) and channel name in Sends mode -->
+						<ParamVariant using="@global" param="encoderMode" strict="true">
+							<Group value="$ENCMODE_MIXER">
+								<String control="encTitle[$i]" param="label"/>
+								<ParamVariant using="@global" param="mixerPage">
+									<Group>
+										<Value control="encoder[$i]" param="volume"/>
+										<String control="encValue[$i]" param="volume"/>
+									</Group>
+									<Group>
+										<Value control="encoder[$i]" param="pan"/>
+										<String control="encValue[$i]" param="pan"/>
+									</Group>
+								</ParamVariant>
+							</Group>
+							<Group value="$ENCMODE_SENDS">
+								<String control="encTitle[$i]" param="label"/>
+							</Group>
+						</ParamVariant>
+
+						<!-- Encoders: Sends mode, one send slot of each channel -->
+						<Bank target="Sends" name="SendsBank">
+							<foreach variable="$s" count="8">
+								<Strip>
+									<ParamVariant using="@global" param="encoderMode" strict="true">
+										<Group value="$ENCMODE_SENDS">
+											<ParamVariant using="@global" param="sendIndex" strict="true">
+												<Group value="$s">
+													<Value control="encoder[$i]" param="sendlevel"/>
+													<String control="encName[$i]" param="sendPort"/>
+													<String control="encValue[$i]" param="sendlevel"/>
+												</Group>
+											</ParamVariant>
+										</Group>
+									</ParamVariant>
+								</Strip>
+							</foreach>
+						</Bank>
+
+					</Strip>
+				</foreach>
+
+				<ScrollButton control="bankLeft" direction="pageleft"/>
+				<ScrollButton control="bankRight" direction="pageright"/>
+			</ScrollBank>
+
+			<ScrollBank target="FollowBank" pagesize="1" name="MixerFollowBank">
+				<Strip onConnect="onConnectFollowChannel">
+					<String control="selectedTrackName" param="label"/>
+				</Strip>
+			</ScrollBank>
+
+			<Bank target="MasterBank">
+				<Strip>
+					<Value control="fader[8]" param="volume"/>
+					<String control="fdrTitle[8]" param="label"/>
+					<String control="fdrValue[8]" param="volume"/>
+				</Strip>
+			</Bank>
+
+		</DeviceMapping>
+
+		<!-- ******************************************************************************************** -->
+		<!-- Pads, Launcher page (pad section rows: bottom row first) -->
+		<!-- ******************************************************************************************** -->
+
+		<PadSection name="PadSectionElement" rows="2" roles="launcherinput">
+			<ParamVariant param="padPage" strict="true">
+				<Group value="$PADPAGE_LAUNCHER">
+					<foreach variable="$i" count="8">
+						<Pad control="padBottom[$i]">
+							<Value control="lpBottomState[$i]" param="state"/>
+							<PlainValue control="lpBottomAnimation[$i]" param="animation"/>
+							<PlainValue control="lpBottomColor[$i]" param="color"/>
+						</Pad>
+					</foreach>
+					<foreach variable="$i" count="8">
+						<Pad control="padTop[$i]">
+							<Value control="lpTopState[$i]" param="state"/>
+							<PlainValue control="lpTopAnimation[$i]" param="animation"/>
+							<PlainValue control="lpTopColor[$i]" param="color"/>
+						</Pad>
+					</foreach>
+				</Group>
+			</ParamVariant>
+		</PadSection>
+
+	</Mappings>
+
+	<!-- ******************************************************************************************** -->
+	<!-- Control Link layout -->
+	<!-- ******************************************************************************************** -->
+
+	<Sections>
+		<GenericSection name="main" rows="1" columns="8">
+			<Slot control="encoder[0]" row="0" column="0"/>
+			<Slot control="encoder[1]" row="0" column="1"/>
+			<Slot control="encoder[2]" row="0" column="2"/>
+			<Slot control="encoder[3]" row="0" column="3"/>
+			<Slot control="encoder[4]" row="0" column="4"/>
+			<Slot control="encoder[5]" row="0" column="5"/>
+			<Slot control="encoder[6]" row="0" column="6"/>
+			<Slot control="encoder[7]" row="0" column="7"/>
+		</GenericSection>
+	</Sections>
+
+
+</ControlSurface>

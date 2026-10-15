@@ -1,0 +1,1 @@
+Novation Launchkey MK4 DAW control (custom script). Receive from / send to the MIDIIN2 / MIDIOUT2 (DAW) ports. Keep the regular Launchkey MIDI port as a keyboard device for notes and drum pads. Screen texts with Cyrillic letters are shown as pictures.

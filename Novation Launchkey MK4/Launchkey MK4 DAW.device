@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- ******************************************************************************************** -->
+<!-- Novation Launchkey MK4 DAW - custom device definition for Fender Studio Pro -->
+<!-- Models: Launchkey MK4 25, 37, 49, 61 (faders on 49/61 only). Not for Launchkey Mini MK4. -->
+<!-- ******************************************************************************************** -->
+
+<!-- Ports (second USB interface of the Launchkey, "DAW In/Out"), example for the 49:
+ Windows [receive/in]: MIDIIN2 (Launchkey MK4 49 MIDI)
+ Windows [send/out]:   MIDIOUT2 (Launchkey MK4 49 MIDI    (Windows cuts port names to 31 characters)
+ macOS [receive/in]:   Launchkey MK4 49 DAW Out
+ macOS [send/out]:     Launchkey MK4 49 DAW In
+ The first interface ("Launchkey MK4 49 MIDI") stays a normal keyboard device for notes and drum pads.
+-->
+
+<DeviceDefinition
+	vendor="Novation"
+	name="Launchkey MK4 DAW"
+
+	classID="{7E8B538F-E3D8-4CFF-9B66-82FC51BD07EE}"
+	category="Surface"
+	nativeCode="JSControlSurfaceDevice"
+	classFile="LaunchkeyMK4MidiDevice.js"
+	classFile.functionName="createLaunchkeyMK4DeviceInstance"
+
+	surfaceFile="Launchkey MK4 DAW.surface.xml"
+	scriptFile="LaunchkeyMK4Component.js"
+	scriptFile.functionName="createLaunchkeyMK4ComponentInstance"
+
+	imageFile="Launchkey MK4.svg"
+	textFile="Launchkey MK4 DAW.txt"
+
+	focusMappingPageCount="8"
+	globalMappingPageCount="8"
+	autoMappingSupported="1"
+	feedbackSupported="1"
+
+	detectorReceivePortName="MIDIIN2 (Launchkey MK4 25 MIDI),MIDIIN2 (Launchkey MK4 25 MIDI,MIDIIN2 (Launchkey MK4 37 MIDI),MIDIIN2 (Launchkey MK4 37 MIDI,MIDIIN2 (Launchkey MK4 49 MIDI),MIDIIN2 (Launchkey MK4 49 MIDI,MIDIIN2 (Launchkey MK4 61 MIDI),MIDIIN2 (Launchkey MK4 61 MIDI,Launchkey MK4 25 DAW Out,Launchkey MK4 37 DAW Out,Launchkey MK4 49 DAW Out,Launchkey MK4 61 DAW Out"
+	detectorSendPortName="MIDIOUT2 (Launchkey MK4 25 MIDI,MIDIOUT2 (Launchkey MK4 25 MIDI),MIDIOUT2 (Launchkey MK4 37 MIDI,MIDIOUT2 (Launchkey MK4 37 MIDI),MIDIOUT2 (Launchkey MK4 49 MIDI,MIDIOUT2 (Launchkey MK4 49 MIDI),MIDIOUT2 (Launchkey MK4 61 MIDI,MIDIOUT2 (Launchkey MK4 61 MIDI),Launchkey MK4 25 DAW In,Launchkey MK4 37 DAW In,Launchkey MK4 49 DAW In,Launchkey MK4 61 DAW In"
+/>
